@@ -25,23 +25,6 @@ $(function () {
   });
 });
 
-//MV浮遊
-function randomValues() {
-  anime({
-    targets: ".p-mv-round",
-    translateX: function () {
-      return anime.random(-400, 400);
-    },
-    translateY: function () {
-      return anime.random(-400, 400);
-    },
-    easing: "easeInOutQuad",
-    duration: 20000,
-    complete: randomValues,
-  });
-}
-randomValues();
-
 // swiper
 const swiper = new Swiper(".swiper", {
   direction: "horizontal",
@@ -77,3 +60,21 @@ const swiper = new Swiper(".swiper", {
     prevEl: ".js_swiper-prev",
   },
 });
+
+//MV浮遊
+function randomValues() {
+  anime({
+    targets: ".p-mv-round",
+    translateX: function () {
+      return anime.random(-400, 400);
+    },
+    translateY: function () {
+      return anime.random(-400, 400);
+    },
+    easing: "easeInOutQuad",
+    duration: 20000,
+    complete: randomValues,
+  });
+}
+
+randomValues();

@@ -30509,7 +30509,7 @@ padding
   letter-spacing: 0.06em;
   line-height: 1;
 }
-.p-header--fixed .p-header__logo {
+.p-header--fixed .p-header__logo a {
   color: #ffffff;
 }
 .p-header--fixed .p-header__item a {
@@ -31356,15 +31356,11 @@ padding
   }
 }
 .p-contact .p-contact-page .p-contact__inner .p-contact__body .p-contact__input .p-contact__item .p-contact__title {
+  width: 100%;
   font-family: "Noto Sans JP", sans-serif;
   font-size: 0.875rem;
   letter-spacing: 0.1em;
   line-height: 1;
-}
-@media screen and (min-width: 640px) {
-  .p-contact .p-contact-page .p-contact__inner .p-contact__body .p-contact__input .p-contact__item .p-contact__title {
-    width: 50%;
-  }
 }
 @media screen and (min-width: 640px) {
   .p-contact .p-contact-page .p-contact__inner .p-contact__body .p-contact__input .p-contact__item .p-contact__title {
@@ -31373,23 +31369,20 @@ padding
     line-height: 1;
   }
 }
+.p-contact .p-contact-page .p-contact__inner .p-contact__body .p-contact__input .p-contact__item p {
+  width: 100%;
+}
 .p-contact .p-contact-page .p-contact__inner .p-contact__body .p-contact__input .p-contact__item .p-contact__textbox {
+  width: 100%;
   height: 40px;
   background-color: #ffffff;
-}
-@media screen and (min-width: 640px) {
-  .p-contact .p-contact-page .p-contact__inner .p-contact__body .p-contact__input .p-contact__item .p-contact__textbox {
-    width: 50%;
-  }
+  border: none;
 }
 .p-contact .p-contact-page .p-contact__inner .p-contact__body .p-contact__input .p-contact__item .p-contact__textarea {
+  width: 100%;
   height: 140px;
   background-color: #ffffff;
-}
-@media screen and (min-width: 640px) {
-  .p-contact .p-contact-page .p-contact__inner .p-contact__body .p-contact__input .p-contact__item .p-contact__textarea {
-    width: 50%;
-  }
+  border: none;
 }
 @media screen and (min-width: 640px) {
   .p-contact .p-contact-page .p-contact__inner .p-contact__body .p-contact__input .p-contact__item .p-contact__textarea {
@@ -31628,6 +31621,9 @@ padding
 }
 .p-works-page .p-works-page__inner .p-works-page__body .p-works-page__media .p-works-page__text-wrapper .p-works-page__text-unit .p-works-page__content .p-works-page__desc p {
   line-height: 1;
+}
+.p-works-page .p-works-page__inner .p-works-page__body .p-works-page__media .p-works-page__text-wrapper .p-works-page__text-unit .p-works-page__content .p-works-page__list {
+  margin-bottom: -5px;
 }
 .p-works-page .p-works-page__inner .p-works-page__body .p-works-page__media .p-works-page__text-wrapper .p-works-page__text-unit .p-works-page__content .p-works-page__list .p-works-page__item {
   padding-left: 15px;

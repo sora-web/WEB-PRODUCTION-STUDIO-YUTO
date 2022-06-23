@@ -89,7 +89,7 @@
     }
   }
   &--fixed {
-    #{$block}__logo {
+    #{$block}__logo a {
       color: #ffffff;
     }
     #{$block}__item a {

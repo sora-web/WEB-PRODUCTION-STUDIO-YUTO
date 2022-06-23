@@ -14,8 +14,7 @@ add_filter('document_title_parts', 'remove_tagline');
 // css読み込み
 function add_stylesheet()
 {
- wp_register_style('reset', get_template_directory_uri() . '/reset.css', array(), '1.0', false);
- wp_enqueue_style('main', get_template_directory_uri() . '/style.css', array('reset'), '1.0', false);
+ wp_enqueue_style('main', get_template_directory_uri() . '/style.css', array(), '1.0', false);
  wp_enqueue_style('swiper', "https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.0.7/swiper-bundle.css", array('main'), '1.0', false);
 };
 add_action('wp_enqueue_scripts', 'add_stylesheet');
@@ -29,7 +28,8 @@ function add_script()
  // jQueryの読み込み
  wp_enqueue_script('jquery-js', 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js', array(), null, true);
  wp_enqueue_script('swiper-js', 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.0.7/swiper-bundle.min.js', array('jquery-js'), null, true);
- wp_enqueue_script('cmn-js', get_template_directory_uri() . '/assets/js/script.js', array('swiper-js'), null, true);
+ wp_enqueue_script('anime-js', 'https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js', array('swiper-js'), null, true);
+ wp_enqueue_script('cmn-js', get_template_directory_uri() . '/assets/js/script.js', array('anime-js'), null, true);
 };
 add_action('wp_enqueue_scripts', 'add_script');
 
@@ -50,15 +50,14 @@ add_filter('big_image_size_threshold', '__return_false');
 
 
 //カスタムメニュー
-register_nav_menus( //メニュー機能をオンにする
- array(
-  'place_global' => 'グローバル', //“メニュー英語名” =>”メニュー名”,
-  'place_utility' => 'ユーティリティ',
-  'place_sidebar' => 'サイドメニュー',
-  'place_footer' => 'フッター',
- )
-);
-
+add_action('init', function () {
+ register_nav_menus( //メニュー機能をオンにする
+  [
+   'global_nav' => 'グローバル', //“メニュー英語名” =>”メニュー名”,
+   'contact' => 'コンタクト', //“メニュー英語名” =>”メニュー名”,
+  ]
+ );
+});
 
 
 //メニューの<li>からID除去
@@ -101,3 +100,21 @@ function adjust_category_paged($query = [])
  return $query;
 }
 add_filter('request', 'adjust_category_paged');
+
+
+// フォーム識別子が1032の場合の例
+add_action('mwform_enqueue_scripts_mw-wp-form-13', function () {
+ wp_dequeue_style('mw-wp-form');
+});
+
+
+add_action("init", function () {
+ register_post_type('works', [
+  'label' => 'works',
+  'public' => true,
+  'menu_position' => 5,
+  'supports' => ['thumbnail', 'title', 'editor', 'custom-fields'],
+  'has_archive' => true,
+  'show_in_rest' => true,
+ ]);
+});

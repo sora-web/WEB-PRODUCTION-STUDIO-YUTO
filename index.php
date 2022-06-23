@@ -28,23 +28,26 @@
     <div class="random-demo">
       <div class="p-mv-round p-mv-round-purple1">
         <picture>
-          <img src="img/mv-round--purple1.svg" alt="" />
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/mv-round--purple1.svg" alt="" />
         </picture>
       </div>
 
       <div class="p-mv-round p-mv-round-purple2">
         <picture>
-          <img src="img/mv-round--purple3.svg" alt="" />
+        </picture>
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/mv-round--purple3.svg" alt="" />
         </picture>
       </div>
       <div class="p-mv-round p-mv-round-purple3">
         <picture>
-          <img src="img/mv-round--purple2.svg" alt="" />
+        </picture>
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/mv-round--purple2.svg" alt="" />
         </picture>
       </div>
       <div class="p-mv-round p-mv-round-yellow">
         <picture>
-          <img src="img/mv-round--yellow.svg" alt="" />
+        </picture>
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/mv-round--yellow.svg" alt="" />
         </picture>
       </div>
 
@@ -134,9 +137,9 @@
                 <a href="/works-page.html" class="p-works__card swiper-slide">
                   <div class="p-works__card__wrapper xs-mb15 lg-mb20">
                     <picture>
-                      <source srcset="img/sp-top-rehanote@2x.jpg" media="(min-width: 0px)" />
-                      <source srcset="img/sp-top-rehanote@2x.jpg" media="(min-width: 640px)" />
-                      <source srcset="img/pc-top-rehanote@2x.jpg" media="(min-width: 960px)" />
+                      <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/sp-top-rehanote@2x.jpg" media="(min-width: 0px)" />
+                      <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/sp-top-rehanote@2x.jpg" media="(min-width: 640px)" />
+                      <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/pc-top-rehanote@2x.jpg" media="(min-width: 960px)" />
                       <img src="img/pc-top-rehanote@2x.jpg" alt="" />
                       <picture>
                   </div>
@@ -154,9 +157,9 @@
                 <a href="/works-page.html" class="p-works__card swiper-slide">
                   <div class="p-works__card__wrapper xs-mb15 lg-mb20">
                     <picture>
-                      <source srcset="img/sp-top-nakamura@2x.jpg" media="(min-width: 0px)" />
-                      <source srcset="img/sp-top-nakamura@2x.jpg" media="(min-width: 640px)" />
-                      <source srcset="img/pc-top-nakamura@2x.jpg" media="(min-width: 960px)" />
+                      <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/sp-top-nakamura@2x.jpg" media="(min-width: 0px)" />
+                      <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/sp-top-nakamura@2x.jpg" media="(min-width: 640px)" />
+                      <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/pc-top-nakamura@2x.jpg" media="(min-width: 960px)" />
                       <img src="img/pc-top-nakamura@2x.jpg" alt="" />
                       <picture>
                   </div>
@@ -174,9 +177,9 @@
                 <a href="/works-page.html" class="p-works__card swiper-slide">
                   <div class="p-works__card__wrapper xs-mb15 lg-mb20">
                     <picture>
-                      <source srcset="img/sp-top-art@2x.jpg" media="(min-width: 0px)" />
-                      <source srcset="img/sp-top-art@2x.jpg" media="(min-width: 640px)" />
-                      <source srcset="img/pc-top-art@2x.jpg" media="(min-width: 960px)" />
+                      <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/sp-top-art@2x.jpg" media="(min-width: 0px)" />
+                      <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/sp-top-art@2x.jpg" media="(min-width: 640px)" />
+                      <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/pc-top-art@2x.jpg" media="(min-width: 960px)" />
                       <img src="img/pc-top-art@2x.jpg" alt="" />
                       <picture>
                   </div>
@@ -194,9 +197,9 @@
                 <a href="/works-page.html" class="p-works__card swiper-slide">
                   <div class="p-works__card__wrapper xs-mb15 lg-mb20">
                     <picture>
-                      <source srcset="img/sp-top-fides@2x.jpg" media="(min-width: 0px)" />
-                      <source srcset="img/sp-top-fides@2x.jpg" media="(min-width: 640px)" />
-                      <source srcset="img/pc-top-fides@2x.jpg" media="(min-width: 960px)" />
+                      <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/sp-top-fides@2x.jpg" media="(min-width: 0px)" />
+                      <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/sp-top-fides@2x.jpg" media="(min-width: 640px)" />
+                      <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/pc-top-fides@2x.jpg" media="(min-width: 960px)" />
                       <img src="img/pc-top-fides@2x.jpg" alt="" />
                       <picture>
                   </div>
@@ -225,48 +228,8 @@
 <!-- /works -->
 
 <!-- contact -->
-<section class="l-cont l-cont--contact">
-  <div class="l-cont__inner l-cont--contact__inner">
+<?php get_template_part('includes/contact-section');  ?>
 
-    <div class="p-contact-top__wrapper">
-      <div class="p-contact">
-        <div class="p-contact-top">
-          <div class="p-contact__inner">
-            <!-- heading -->
-            <div class="p-contact__heading xs-mb65 lg-mb60">
-              <p class="p-contact__heading--jp c-heading c-heading--jp xs-mb5 lg-mb10"><span>お問い合わせ</span></p>
-              <h2 class="p-contact__heading--en c-heading c-heading--en"><span>Contact</span></h2>
-            </div>
-            <!-- //heading -->
-            <!-- body -->
-            <div class="p-contact__body xs-mb70">
-              <div class="p-contact__primary">
-                <div class="p-contact__item xs-mb50 lg-mb50">
-                  <p class="p-contact__title xs-mb15 lg-mb20">お名前</p>
-                  <p class="p-contact__textbox"></p>
-                </div>
-                <div class="p-contact__item xs-mb50 lg-mb0">
-                  <p class="p-contact__title xs-mb15 lg-mb20">メールアドレス</p>
-                  <p class="p-contact__textbox"></p>
-                </div>
-              </div>
-              <div class="p-contact__secondary">
-                <div class="p-contact__item">
-                  <p class="p-contact__title xs-mb15 lg-mb20">お問い合わせ内容</p>
-                  <p class="p-contact__textarea"></p>
-                </div>
-              </div>
-            </div>
-            <!-- //body -->
-            <div class="p-contact__btn-unit">
-              <a href="" class="p-contact__btn c-btn">Submit</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 <!-- //contact -->
 
 <?php get_footer();  ?>

@@ -137,6 +137,7 @@
                 }
               }
               #{$block}__list {
+                margin-bottom: -5px;
                 #{$block}__item {
                   padding-left: 15px;
                   position: relative;

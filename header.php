@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="<?php language_attributes(); ?>">
 
 <head>
   <meta charset="UTF-8" />
@@ -42,17 +42,18 @@
 
 </head>
 
-<body>
+<body <?php body_class(); ?>>
   <!-- main -->
+
+
+
 
   <header class="l-header">
     <div class="l-header__inner">
       <div class="p-header">
         <div class="p-header__inner">
           <div class="p-header__logo">
-            <p class="c-logo">
-              <span class="xs-mr10">WEB</span><span class="xs-mr10">PRODUCTION STUDIO</span><span>YUTO</span>
-            </p>
+            <a class="c-logo" href="<?php echo esc_url(home_url('/')); ?>"><span class="xs-mr10">WEB</span><span class="xs-mr10">PRODUCTION STUDIO</span><span>YUTO</span></a>
           </div>
           <div class="p-header__burger js-burger lg-off">
             <span></span>
@@ -60,22 +61,46 @@
             <span></span>
           </div>
 
+
+
+          <?php
+          //menuIDを取得する
+          $menu_name = 'global_nav';
+          $locations = get_nav_menu_locations();
+          $menu = wp_get_nav_menu_object($locations[$menu_name]);
+          // var_dump($menu);
+          $menu_items = wp_get_nav_menu_items($menu->term_id);
+          ?>
+
+
           <div class="p-header-pc lg-on">
             <div class="p-header__nav">
               <ul class="p-header__list">
-                <li class="p-header__item lg-mr20">
-                  <a href="/" class="">home</a>
-                </li>
-                <li class="p-header__item lg-mr20">
-                  <a href="about-us.html" class="">about us</a>
-                </li>
-                <li class="p-header__item lg-mr20">
-                  <a href="works-page.html" class="">works</a>
-                </li>
+                <?php foreach ($menu_items as $item) :  ?>
+                  <li class="p-header__item lg-mr20">
+                    <a href="<?php echo $item->url;  ?>" class=""><?php echo $item->title;  ?>
+                    </a>
+                  </li>
+                <?php endforeach;  ?>
               </ul>
+
+              <?php
+              //menuIDを取得する
+              $menu_name = 'contact';
+              $locations = get_nav_menu_locations();
+              $menu = wp_get_nav_menu_object($locations[$menu_name]);
+              // var_dump($menu);
+              $menu_items = wp_get_nav_menu_items($menu->term_id);
+              ?>
+
               <button class="p-header__btn">
-                <a href="contact-page.html" class="c-rounded-btn jquery-disabled">Contact</a>
+                <?php foreach ($menu_items as $item) :  ?>
+                  <a href="<?php echo $item->url;  ?>" class="c-rounded-btn jquery-disabled"><?php echo $item->title;  ?>
+                  </a>
+                <?php endforeach;  ?>
               </button>
+
+
             </div>
           </div>
         </div>
